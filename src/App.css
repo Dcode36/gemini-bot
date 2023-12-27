@@ -1,10 +1,14 @@
+* {
+  transition: scroll 0.5s ease;
+}
+
 li {
   list-style-type: none;
 }
 
 .App {
   text-align: start;
-  padding: 20px;
+  padding: 20px 100px;
   height: 100vh;
 }
 
@@ -14,7 +18,14 @@ li {
   line-height: 1.5;
   color: #333;
 }
-
+nav{
+  height: 80px;
+}
+ul li a img,ul li a i{
+  height: 45px;
+  width: 45px;
+  font-size: 38px;
+}
 .styled-line {
   font-weight: bold;
   color: #007bff;
@@ -26,32 +37,154 @@ li {
 }
 
 
-.digvi{
+.digvi {
   height: 50px;
 }
 
-.sender{
+.sender {
   position: absolute;
   bottom: 0;
-  
+
 }
 
 
-.genrated-text{
-  max-height: 40vh !important;
-  overflow-y: scroll;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.589);
+.genrated-text {
+  max-height: 20rem !important;
+  max-width: 70%;
+  box-shadow: rgba(253, 1, 1, 0.35) 0px 5px 15px;
   border-radius: 10px;
   padding: 20px;
+  font-size: 15px;
+  overflow-y: auto;
 }
 
-.genrated-text::-webkit-scrollbar{
+.genrated-text::-webkit-scrollbar {
   width: 5px;
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
 }
-.genrated-text::-webkit-scrollbar-thumb{
-  background-color: darkgray;
-}
-.genrated-text::-webkit-scrollbar-track{
-  background-color: gray;
 
+.genrated-text::-webkit-scrollbar-thumb {
+  background-color: black;
+  overflow: hidden;
+  border-radius: 0 10px 10px 0;
+}
+
+.genrated-text::-webkit-scrollbar-track {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.364);
+  border-radius: 0 10px 10px 0;
+}
+
+.chat-box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+input{
+  border-radius: 10px;  
+  width: 100%;
+
+}
+.chat-container {
+  height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  transition: all .7s ease;
+  padding: 10px 100px;
+}
+
+.chat-container::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+
+.user-msg {
+  text-align: end;
+}
+
+span{
+  color: rgba(253, 1, 1, 0.717);
+}
+.send-btn{
+  border: 1px solid rgba(253, 1, 1, 0.717);
+  height:46px;
+  width: 150px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  background-color: rgba(253, 1, 1, 0.717);
+  color: white;
+}
+
+.copy-btn {
+  width: 40px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  background-color: rgba(253, 1, 1, 0.717);
+  color: white;
+  border:none;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.user-prompt {
+  border-radius: 10px;
+  background-color: rgba(253, 1, 1, 0.717) !important;
+}
+
+@media (max-width:968px) {
+
+  .chat-container {
+    height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    transition: all .7s ease;
+    padding:10px 2px;
+  }
+
+  .genrated-text {
+    max-height: 35rem !important;
+    max-width: 90%;
+    box-shadow: rgba(253, 1, 1, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 15px;
+    overflow-y: auto;
+  }
+
+  .App {
+    text-align: start;
+    padding: 70px 2px;
+    height: 100vh;
+  }
+  .send-btn{
+    border: 1px solid rgba(253, 1, 1, 0.717);
+    height:46px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: rgba(253, 1, 1, 0.717);
+    color: white;
+  }
+  .chat-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+
+  }
+
+}
+
+.developer{
+  font-size: 10px;
+  padding: 10px 0;
 }
